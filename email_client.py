@@ -25,6 +25,7 @@ class EmailNotificationClient():
 
             gmail_user = self._get_gmail_user()
             gmail_token = self._get_gmail_token()
+            print "Logging in: user: {} token: {}".format(gmail_user, gmail_token)
             server.login(gmail_user, gmail_token)
             print "Sending email: {}".format(message)
             server.sendmail(from_addr, to_addrs, message)

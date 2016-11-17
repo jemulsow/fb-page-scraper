@@ -237,7 +237,6 @@ def notify_by_imessage(msgs):
 
 
 def parse_response(data, page, key_words):
-
     found_messages = []
     for d in data:
         message = d.get(consts.MESSAGE, '').lower()
