@@ -236,8 +236,7 @@ def notify_by_imessage(msgs):
     pass
 
 
-def parse_response(data, page):
-    key_words = get_key_words()
+def parse_response(data, page, key_words):
 
     found_messages = []
     for d in data:
@@ -279,12 +278,13 @@ def main():
     # Get pages to search
     pages = get_page_names()
     limit = get_posts_limit()
+    key_words = get_key_words()
 
     msgs = []
     # For each page, query and process
     for page in pages:
         resp = make_request(token, page, limit)
-        found_messages = parse_response(resp, page)
+        found_messages = parse_response(resp, page, key_words)
         if found_messages:
             msgs.extend(found_messages)
     print msgs
