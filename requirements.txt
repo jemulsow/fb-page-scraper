@@ -1,2 +1,2 @@
 cassandra-driver
-sendgrid
+git+https://github.com/mobolic/facebook-sdk.git#egg=facebook-sdk

@@ -1,7 +1,10 @@
+#!/usr/bin/python
+
 import argparse
 import facebook
 import datetime
 from ConfigParser import SafeConfigParser
+import time
 
 import consts
 from db_driver import DB_Driver
@@ -177,7 +180,6 @@ def notification_sent(msg_id):
         msg.get(consts.IMESSAGE_NOTIFICATION_TIME)
     )):
         already_sent = True
-        print msg
     if VERBOSE:
         print ("Notification for msg {} already sent: {}".format(
                    msg_id, already_sent))
@@ -260,6 +262,7 @@ def parse_response(data, page, key_words):
 
 
 def main():
+    print "Start time: {}".format(time.strftime("%Y-%m-%d %H:%M:%S"))
     # Parse args
     args = parse_args()
 
@@ -296,6 +299,8 @@ def main():
 
         # Save off to DB
         save_to_db(msgs)
+    if VERBOSE:
+        print "End time: {}".format(time.strftime("%Y-%m-%d %H:%M:%S"))
 
 if __name__ == "__main__":
     main()

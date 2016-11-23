@@ -19,7 +19,7 @@ IMESSAGE_NOTIFICATION_SECTION = 'imessage'
 TO = 'to'
 FROM = 'from'
 ENABLED = 'enabled'
-USER = 'token'
+USER = 'user'
 TOKEN = 'token'
 
 # FB API CONSTS
